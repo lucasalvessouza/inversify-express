@@ -9,19 +9,19 @@ import { ListUseCaseInterface } from "./use_cases/list_use_case";
 export const router = express.Router()
 
 router.get('/', (req, res) => {
-  const entityListUseCase = container.get<ListUseCaseInterface>(TYPES.EntityListUseCase)
+  const entityListUseCase: ListUseCaseInterface = container.get(TYPES.EntityListUseCase)
   res.send(entityListUseCase.execute())
 })
 
 router.get('/:id', (req, res) => {
-  const entityFindUseCase = container.get<FindUseCaseInterface>(TYPES.EntityFindUseCase)
+  const entityFindUseCase: FindUseCaseInterface = container.get(TYPES.EntityFindUseCase)
   res.send(entityFindUseCase.execute({
     id: req.params.id
   }))
 })
 
 router.post('/', (req, res) => {
-  const entityCreateUseCase = container.get<CreateUseCaseInterface>(TYPES.EntityCreateUseCase)
+  const entityCreateUseCase: CreateUseCaseInterface = container.get(TYPES.EntityCreateUseCase)
   console.log(req.body)
   res.send(entityCreateUseCase.execute(req.body))
 })
