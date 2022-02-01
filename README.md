@@ -18,7 +18,7 @@ import { container } from '../wire'
 
 class Example {
     someMethod() {
-        const exampleClass = container.get<ExampleClassInterface>(TYPES.ExampleClass)
+        const exampleClass: ExampleClassInterface = container.get(TYPES.ExampleClass)
     }
 }
 ```
