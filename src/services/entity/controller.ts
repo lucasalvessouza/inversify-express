@@ -22,6 +22,5 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   const entityCreateUseCase: CreateUseCaseInterface = container.get(TYPES.EntityCreateUseCase)
-  console.log(req.body)
   res.send(entityCreateUseCase.execute(req.body))
 })
